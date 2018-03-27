@@ -21,7 +21,7 @@ module Ransack
         # Originally, parent was checked with `present?`, but that might actually initiate a 
         # DB query for the size of the collection. So any empty collection will evaluate to 
         # false. So instead we'll use the simple `nil?` check.
-        attr_name.present? && parent.nil?
+        attr_name.present? && !parent.nil?
       end
 
       def reset_binding!
