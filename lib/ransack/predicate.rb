@@ -13,6 +13,10 @@ module Ransack
         Ransack.predicates[name.to_s]
       end
 
+      def names_by_decreasing_length
+        names.sort { |a, b| b.length <=> a.length }
+      end
+      
       def detect_and_strip_from_string!(str)
         detect_from_string str, chomp: true
       end
